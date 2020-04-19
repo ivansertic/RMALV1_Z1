@@ -1,6 +1,6 @@
 class Die(private val minValue: Int = 1, private val maxValue: Int = 6) {
     var currentValue: Int
-        //private set
+        private set
 
     init {
         currentValue = 6
