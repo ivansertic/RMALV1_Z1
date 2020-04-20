@@ -40,7 +40,9 @@ fun main() {
     println("Press: Y to Play")
     println("Press anything else to Quit")
     option = readLine()
+
     if(option?.toUpperCase() == "Y"){
+
         do {
             var throwNumber = 1
             println("_______FIRST THROW______")
@@ -61,6 +63,7 @@ fun main() {
                         yahtzee.showDiceToRoll()
                         throwNumber++
                     }
+
                     2 -> {
                         println("______ HOW MANY DICES DO YOU WANT TO LOCK________")
                         var state = false
@@ -69,7 +72,7 @@ fun main() {
                             val option2: String = readLine()!!
                             try {
                                 val parsedInt = option2.toInt()
-                                if (parsedInt < 1 || parsedInt > yahtzee.diceToRoll.size) {
+                                if (parsedInt < 1 || parsedInt > yahtzee.checkAvailableDice()) {
                                     println("Too many or few dice picked")
                                 } else {
                                     numberOfDie = parsedInt
@@ -97,6 +100,7 @@ fun main() {
 
                         throwNumber++
                     }
+
                     3 -> {
                         if (yahtzee.checkForPoker()) {
                             println("You got poker")

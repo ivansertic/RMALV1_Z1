@@ -1,9 +1,11 @@
 
 
 class Yahtzee(private val numberOfDice: Int = 6,
-              private var rollNumber: Int = 0,
+              private val diceToRoll:MutableList<Die> = mutableListOf(),
               private val lockedDice:MutableList<Die> = mutableListOf()) {
-    val diceToRoll:MutableList<Die> = mutableListOf()
+
+
+
     init {
         populateDiceToRoll(diceToRoll)
     }
@@ -120,6 +122,10 @@ class Yahtzee(private val numberOfDice: Int = 6,
         }
 
         return hit
+    }
+
+    fun checkAvailableDice():Int{
+        return this.diceToRoll.size
     }
 
     private fun populateDiceToRoll(dieList:MutableList<Die>){
